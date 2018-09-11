@@ -23,8 +23,8 @@ The following **additional** user stories are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to have network pull-to-refresh functionality continue if WiFi connection drops and reconnects
+2. How to implement an "infinite scroll" to access remaining photos from API
 
 ## Video Walkthrough
 
@@ -37,6 +37,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+TableViewCell height had scaling issues. Needed to manually change TableViewCell height + TableView row height to ensure scaling was accurate.
 
 ## License
 

@@ -36,7 +36,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+
 TableViewCell height had scaling issues. Needed to manually change TableViewCell height + TableView row height to ensure scaling was accurate.
 
 ## License

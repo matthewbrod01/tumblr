@@ -44,7 +44,6 @@ class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
                 
                 // Get posts and store in posts property
                 let responseDictionary = dataDictionary["response"] as! [String: Any]
@@ -85,6 +84,25 @@ class PhotoViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get a reference to the PhotoDetailsViewController
+        let vc = segue.destination as! PhotoDetailsViewController
+        
+        // Get the cell that triggered the segue
+        let cell = sender as! UITableViewCell
+        
+        // Send photo to PhotoDetailsVC
+        if let indexPath = tableView.indexPath(for: cell) {
+            let post = posts[indexPath.row]
+            vc.post = post
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
